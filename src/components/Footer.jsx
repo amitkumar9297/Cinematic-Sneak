@@ -7,13 +7,15 @@ import { AiFillLinkedin } from 'react-icons/ai'
 const Footer = () => {
     return (
         <Box
+            mt={['16%', '10%']}
             minH={"48"}
+            // maxH={"48"}
             px={"16"}
             py={["16", "8"]}
             bgColor={"blackAlpha.800"}
             color={"whiteAlpha.900"}
-            // bottom={['1px', '1px']}
-            pos={'relative'}
+        // bottom={['1px', '1px']}
+        // pos={'relative'}
         >
             <Stack direction={["column", "row"]} h={"full"} alignItems={"center"}>
                 <VStack w={"full"} alignItems={["center", "flex-start"]}>

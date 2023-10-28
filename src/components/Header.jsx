@@ -1,14 +1,16 @@
-import { Box, HStack, Text, VStack } from '@chakra-ui/layout'
-import React, { useEffect, useState, memo } from 'react'
+import { Box, HStack, Text } from '@chakra-ui/layout'
+import React, { memo } from 'react'
 import '../styles/Header.css'
 import { Input } from '@chakra-ui/input'
 import { HiOutlineMenuAlt3 } from 'react-icons/hi'
 import { Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/menu'
 import { IconButton } from '@chakra-ui/button'
+import { useNavigate } from 'react-router-dom'
 
 const Header = (props) => {
 
     const screenWidth = props;
+    const navigate = useNavigate();
     // console.log(screenWidth)
 
     return (
@@ -28,16 +30,32 @@ const Header = (props) => {
                 {
                     `${screenWidth.screenWidth}` > 500 ?
                         (
-                            <Text className='gradient-text' fontSize={'2xl'} m={['2', '4']}>Cinematic Sneak</Text>
+                            <Text
+                                className='gradient-text'
+                                fontSize={'2xl'}
+                                m={['2', '4']}
+                                onClick={() => navigate('/')}
+                                cursor={'pointer'}
+                            >
+                                Cinematic Sneak
+                            </Text>
                         ) : (
 
-                            <HStack justifyContent={'space-between'} w={'90%'}>
-                                <Text className='gradient-text' fontSize={'2xl'} m={['2', '4']}>Cinematic Sneak</Text>
+                            <HStack justifyContent={'space-between'} minW={'95%'}>
+                                <Text
+                                    className='gradient-text'
+                                    fontSize={'2xl'}
+                                    m={['2', '4']}
+                                    onClick={() => navigate('/')}
+                                    cursor={'pointer'}
+                                >
+                                    Cinematic Sneak
+                                </Text>
                                 <Menu>
                                     <MenuButton as={IconButton} icon={<HiOutlineMenuAlt3 />} />
                                     <MenuList>
-                                        <MenuItem>About Us</MenuItem>
-                                        <MenuItem>Help</MenuItem>
+                                        <MenuItem onClick={() => navigate('/aboutus')} cursor={'pointer'}>About Us</MenuItem>
+                                        <MenuItem onClick={() => navigate('/help')} cursor={'pointer'}>Help</MenuItem>
                                         <MenuItem>Color Mode</MenuItem>
 
                                     </MenuList>
@@ -65,9 +83,11 @@ const Header = (props) => {
                                 w={'15%'}
                                 mr={'15px'}
                             >
-                                <Text>Home</Text>
-                                <Text>Help</Text>
-                                <Text>About</Text>
+
+                                <Text onClick={() => navigate('/')} cursor={'pointer'}>Home</Text>
+                                <Text onClick={() => navigate('/help')} cursor={'pointer'} >Help</Text>
+                                <Text onClick={() => navigate('/aboutus')} cursor={'pointer'}>About</Text>
+
 
                             </HStack>
 

@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Header from './components/Header';
 import Home from './pages/Home';
 import Footer from './components/Footer';
+import About from './pages/About';
+import Help from './pages/Help';
 
 function App() {
 
@@ -34,13 +36,15 @@ function App() {
     <>
       <ChakraProvider theme={theme}>
         <ColorModeSwitcher justifySelf="flex-end" />
-        <Header screenWidth={screenWidth.winWidth} />
         <Router>
+          <Header screenWidth={screenWidth.winWidth} />
           <Routes>
             <Route path='/' element={<Home />} />
+            <Route path='/aboutus' element={<About />} />
+            <Route path='/help' element={<Help />} />
           </Routes>
         </Router>
-        {/* <Footer /> */}
+        <Footer />
       </ChakraProvider >
     </>
   );
