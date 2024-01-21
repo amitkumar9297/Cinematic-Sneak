@@ -28,6 +28,8 @@ const CardBlock = (props) => {
                         rating={i.vote_average}
                         title={i.title}
                         original_title={i.original_title}
+                        id={i.id}
+                        release={i.release_date}
                         key={i.id}
                     />))
                 }
