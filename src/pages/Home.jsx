@@ -42,7 +42,7 @@ const Home = () => {
                 setScienceFiction(scienceFictionResponse.data);
                 setThriller(thrillerResponse.data);
 
-                // console.log(trendingResponse.data);
+                console.log(trendingResponse.data);
                 // console.log(actionResponse.data);
                 // console.log(adventureResponse.data);
                 setLoading(false);
