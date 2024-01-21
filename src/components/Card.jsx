@@ -141,7 +141,7 @@ export const MovieInfo = () => {
 export const Trailer = ({ urll, detail, cast }) => {
     // const [loading, setLoading] = useState(false);
     return (
-        <Stack h={'100%'} w={'100%'} bg={'transparent'} direction={{ base: 'column', sm: 'column', md: 'column', lg: 'row', xl: 'row' }} justifyContent={{ base: 'center', sm: 'center', md: 'center', lg: 'space-between' }} alignItems={{ base: 'center', sm: 'center', md: 'center', lg: 'flex-start' }} p={'1rem'}>
+        <Stack h={'100%'} w={'100%'} bg={'transparent'} direction={{ base: 'column', sm: 'column', md: 'column', lg: 'row', xl: 'row' }} justifyContent={{ base: 'center', sm: 'center', md: 'center', lg: 'space-between' }} alignItems={{ base: 'center', sm: 'center', md: 'center', lg: 'flex-start' }} p={'1rem'} color={'white'}>
             <VideoPlayer videoId={urll} />
             <VStack w={{ base: '100%', sm: '100%', md: '100%', lg: '60%', xl: '60%' }}>
                 <VStack w={'100%'}>
@@ -150,9 +150,9 @@ export const Trailer = ({ urll, detail, cast }) => {
                 <Text fontSize={'1rem'} fontWeight={400}><span style={{ fontSize: '1.3rem' }}>Overview</span> :- {detail.overview}</Text>
                 <HStack w={'100%'}>
                     <Text fontSize={'1.3rem'}>Categories:-</Text>
-                    {/* {
+                    {
                         detail.genres.map((i) => (<Text key={i.id}>{`${i.name},  `}</Text>))
-                    } */}
+                    }
                 </HStack>
                 <HStack w={'100%'}>
                     <Text><span style={{ fontSize: '1.3rem' }}>Rating:</span> {detail.vote_average}⭐</Text>
@@ -184,8 +184,8 @@ export const Trailer = ({ urll, detail, cast }) => {
 
 const CastCard = ({ pic, ori_name, character }) => {
     return (
-        <VStack minH={'19rem'} minW={'9rem'} bg={'red'}>
-            <Img src={`https://image.tmdb.org/t/p/w500/${pic}`} minH={'70%'} minW={'90%'} />
+        <VStack minH={'19rem'} minW={'9rem'} bg={'rgba(0, 0, 0, 0.10)'}>
+            <Img src={`https://image.tmdb.org/t/p/w200/${pic}`} minH={'70%'} minW={'90%'} />
             <Text fontWeight={'500'} fontSize={'0.8rem'} wrap={'wrap'}>{ori_name}</Text>
             <HStack w={'90%'} wrap={'wrap'}>
                 <Text fontSize={'0.8rem'} fontWeight={'400'}>Character:- </Text>
